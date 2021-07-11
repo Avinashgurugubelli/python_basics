@@ -1,0 +1,9 @@
+{
+    "port": 6111,
+    "my_sql_db_config": {
+        "Username": "mKMh3aC4DY",
+        "Database name": "mKMh3aC4DY",
+        "Password": "Xd62GBwrgb",
+        "Server": "remotemysql.com"
+    }
+}
