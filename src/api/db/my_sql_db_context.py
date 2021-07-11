@@ -19,3 +19,11 @@ class MySqlDbContext:
         mycursor = self.connection.cursor()
         mycursor.execute(query)
         return mycursor.fetchall()
+
+    def fire_query(self, query: str):
+        mycursor = self.connection.cursor()
+        mycursor.execute(query)
+        mycursor.commit()
+        return {
+            "rows effected": mycursor.rowcount
+        }
