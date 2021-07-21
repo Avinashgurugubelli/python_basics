@@ -42,7 +42,7 @@ def call_do_something_fn_using_threads():
     t1.start()
     t2.start()
 
-    # Join method
+    # Join method pause execution on the main thread by 'joining' all of our started threads.
     t1.join()
     t2.join()
 
