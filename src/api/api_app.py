@@ -9,6 +9,10 @@ from controllers.employee_controller import EmployeeController, EmployeesControl
 app: Flask = Flask(__name__)
 api = Api(app)
 
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 # regestering controllers
 api.add_resource(EmployeesController, '/api/v1/employees_controller', methods=['GET', 'POST'])
 api.add_resource(EmployeeController, '/api/v1/employees_controller/<int:id>', methods=['GET', 'PUT', 'DELETE'])

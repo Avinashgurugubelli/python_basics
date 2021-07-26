@@ -1,5 +1,6 @@
 from flask import jsonify
 from flask_restful import Resource, request
+from flask import Response
 from models.employee_model import EmployeeModel
 from flask_inputs.validators import JsonSchema
 from flask_inputs import Inputs
@@ -48,5 +49,5 @@ class EmployeesController(Resource):
         print("POST ID: " + str(id))
         schema_validator = EmployeeSchemaValidator(request)
         if not schema_validator.validate():
-            return jsonify(success=False, errors=schema_validator.errors)
+            return  Response(jsonify(success=False, errors=schema_validator.errors), status=500) 
         return self.repo.add_employee(request.get_json(force=True))

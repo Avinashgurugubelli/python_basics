@@ -8,11 +8,11 @@ class MySqlDbContext:
 
     def init_db_connection(self):
         return mysql.connector.connect(
-            host="",
-            user="",
-            password="",
-            port="",
-            database=""
+            host="remotemysql.com",
+            user="mKMh3aC4DY",
+            password="Xd62GBwrgb",
+            port="3306",
+            database="mKMh3aC4DY"
         )
 
     def select(self, query: str):
@@ -23,7 +23,7 @@ class MySqlDbContext:
     def fire_query(self, query: str):
         mycursor = self.connection.cursor()
         mycursor.execute(query)
-        mycursor.commit()
+        self.connection.commit()
         return {
             "rows effected": mycursor.rowcount
         }
